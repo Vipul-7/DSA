@@ -1,3 +1,5 @@
+//try rod cutting in geeks for geeks website that does not have length array
+
 package Dynamic_Programming;
 
 public class Rod_Cutting {

@@ -62,7 +62,7 @@ public class Knapsack_01 {
                 // valid
                 if (we <= i) {
                     int include = val + dp[i - we][j - 1];
-                    int exclude = dp[i][j - 1];
+                    int exclude = dp[i][j - 1]; 
 
                     dp[i][j] = Math.max(include, exclude);
                 }
