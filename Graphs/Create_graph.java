@@ -49,7 +49,7 @@ public class Create_graph {
         }   
 
         bfs(graph);
-        dfs(graph, 0, new boolean[v]);
+        dfsUtil(graph, 0, new boolean[v]);
         System.out.println(hasPath(graph, 0, 44, new boolean[v]));
     }
 
