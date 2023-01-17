@@ -59,7 +59,8 @@ public class Longest_common_subsequence {
 
         int dp[][] = new int[n+1][m+1];
 
-        // Intialization also 0 value
+        // Intialization also 0 value in java
+        // meaning of dp[i][j] is the at both length i and j for maximum LCS
 
         for (int i = 1; i < dp.length; i++) {
             for (int j = 1; j < dp[0].length; j++) {
