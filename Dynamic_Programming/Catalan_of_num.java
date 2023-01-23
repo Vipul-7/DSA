@@ -3,6 +3,10 @@ package Dynamic_Programming;
 import java.util.Arrays;
 
 public class Catalan_of_num {
+    // 0 and 1's catalan is 1
+    // Make Unique BST is same like catalan's number
+    // Also Mountain ranges is like catalan's number
+
     public static void main(String[] args) {
         int n = 4 ;
         System.out.println(Catalan(n));

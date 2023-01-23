@@ -12,8 +12,8 @@ public class Knapsack_01 {
                 dp[i][j] = -1;
             }
         }
-        System.out.println("Using Memoization ->" +knapsack(v, w, cap, 0, dp));
-        System.out.println("Using Tabulation ->" +Knapsack_Tab(v, w, cap));
+        System.out.println("Using Memoization ->" + knapsack(v, w, cap, 0, dp));
+        System.out.println("Using Tabulation ->" + Knapsack_Tab(v, w, cap));
     }
 
     // Memoization
@@ -39,9 +39,6 @@ public class Knapsack_01 {
         return dp[cap][i];
     }
 
-
-
-
     // Tabulation
     public static int Knapsack_Tab(int v[], int w[], int cap) {
         int dp[][] = new int[cap + 1][v.length + 1];
@@ -62,7 +59,7 @@ public class Knapsack_01 {
                 // valid
                 if (we <= i) {
                     int include = val + dp[i - we][j - 1];
-                    int exclude = dp[i][j - 1]; 
+                    int exclude = dp[i][j - 1];
 
                     dp[i][j] = Math.max(include, exclude);
                 }
@@ -76,10 +73,10 @@ public class Knapsack_01 {
         }
 
         // for (int i = 0; i < dp.length; i++) {
-        //     for (int j = 0; j < dp[0].length; j++) {
-        //         System.out.print(dp[i][j]+" ");
-        //     }
-        //     System.out.println();
+        // for (int j = 0; j < dp[0].length; j++) {
+        // System.out.print(dp[i][j]+" ");
+        // }
+        // System.out.println();
         // }
 
         return dp[cap][v.length];

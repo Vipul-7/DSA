@@ -1,4 +1,4 @@
-
+package Heaps;
 // Leetcode problem statement ->
 /*You are given n​​​​​​ tasks labeled from 0 to n - 1 represented by a 2D integer array tasks, where tasks[i] = [enqueueTimei, processingTimei] means that the i​​​​​​th​​​​ task will be available to process at enqueueTimei and will take processingTimei to finish processing.
 
@@ -9,8 +9,6 @@ If the CPU is idle and there are available tasks, the CPU will choose the one wi
 Once a task is started, the CPU will process the entire task without stopping.
 The CPU can finish a task then start a new one instantly.
 Return the order in which the CPU will process the tasks. */
-
-package Heaps;
 
 import java.util.*;
 
