@@ -16,7 +16,7 @@ public class Disjoint_set {
         if (parent[key] == key) {
             return key;
         }
-        return find(parent[key]);
+        return parent[key] = find(parent[key]);
     }
 
     static void Union(int a, int b) {
