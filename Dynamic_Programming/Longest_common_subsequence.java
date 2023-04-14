@@ -2,7 +2,7 @@ package Dynamic_Programming;
 
 public class Longest_common_subsequence {
     public static void main(String[] args) {
-        String str1 = "abcde", str2="ace";
+        String str1 = "Amit", str2="Avinash";
         int n = str1.length() ,m = str2.length();
 
         System.out.println(LCS_recursion(str1, str2, n, m));
@@ -13,7 +13,7 @@ public class Longest_common_subsequence {
                 dp[i][j] = -1;
             }
         }
-        System.out.println(LCS_Memoization(str1, str2, n, m,dp));
+        // System.out.println(LCS_Memoization(str1, str2, n, m,dp));
 
         System.out.println(LCS_Tabulation(str1, str2));
     }
@@ -69,6 +69,13 @@ public class Longest_common_subsequence {
                 else
                 dp[i][j] = Math.max(dp[i][j-1],dp[i-1][j]);
             }
+        }
+
+        for (int i = 0; i < dp.length; i++) {
+            for (int j = 0; j < dp[0].length; j++) {
+                System.out.print(dp[i][j]+" ");
+            }
+            System.out.println();
         }
 
         return dp[n][m];
