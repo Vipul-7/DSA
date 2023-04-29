@@ -79,4 +79,21 @@ public class Swapping_Nodes {
         currX.next = currY.next ;
         currY.next = temp ;
     }
+    
+    // leetcode 24 - recursion - swap nodes in pairs
+    public ListNode swapPairs(ListNode head) {
+        if(head == null || head.next == null){
+            return head;
+        }
+        
+        ListNode new_head = head.next;
+        ListNode temp = head.next.next;
+        
+        new_head.next = head;
+        head.next = swapPairs(temp);
+        return new_head;
+    }
+    
+    // leetcode - 24 - iterative -swap nodes  in pairs
+    
 }
