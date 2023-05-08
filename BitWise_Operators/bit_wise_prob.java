@@ -96,6 +96,10 @@ public class bit_wise_prob {
 
     // count set number in bit
     public static int count_set(int n) {
+        /*
+         * time complexity - O(logn) +1 (because decimal to binary conversion will take
+         * (logn) time
+         */
         int count = 0;
         while (n > 0) {
             if ((n & 1) != 0) {

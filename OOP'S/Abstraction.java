@@ -43,8 +43,11 @@ class Horse extends Animal{
 }
 
 // Interfaces
+// all methods are public,abstarct and without implementation
 // all abstraction(100% abstraction)
 // implements keyword
+// multiple inheritance
+// variables are public,static and final
 
 interface Harnivore{
     void grass();
