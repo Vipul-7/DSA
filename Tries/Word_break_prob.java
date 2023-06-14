@@ -1,21 +1,22 @@
 package Tries;
 
-public class Word_break_prob {
+public class Word_break_prob{
+    // given a input string and the word array. Find out that is it possible to make
+    // string using the array
     public static void main(String[] args) {
-        String arr[] = {"i","like","samsung","sam","maio"};
+        String arr[] = { "i", "like", "samsung", "sam", "maio" };
         word_break("ilikesamsungmo");
     }
 
-    public static boolean word_break(String key){ // O(L) -> length of key
-        if(key.length() == 0)
-        return true ;
+    public static boolean word_break(String key) { // O(L) -> length of key
+        if (key.length() == 0)
+            return true;
 
-        for(int i=1 ; i<= key.length() ; i++){
-            if(search(key.substring(0,i)) && word_break(key.substring(i)))
-            return true; 
+        for (int i = 1; i <= key.length(); i++) {
+            if (search(key.substring(0, i)) && word_break(key.substring(i)))
+                return true;
         }
 
-        return false ;
+        return false;
     }
-   
 }
