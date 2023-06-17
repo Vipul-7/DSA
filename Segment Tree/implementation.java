@@ -19,7 +19,7 @@ public class implementation {
         return segmentTree[segmentTreeIndex] = left + right;
     }
 
-    public static int getSumUtil(int segmentTreeIndex, int si, int sj, int qi, int qj) {
+    public static int getSumUtil(int segmentTreeIndex, int si, int sj, int qi, int qj) { // O(logn)
         if (si >= qj || sj <= qi) { // non-overlap
             return 0;
         } else if (si >= qi && sj <= qj) { // completely overlap
@@ -38,6 +38,28 @@ public class implementation {
         return getSumUtil(0, 0, arr.length - 1, qi, qj);
     }
 
+    public static void updateUtil(int segmentTreeIndex, int si, int sj, int arrIdx, int diff) { // O(logn)
+        if (si > arrIdx || arrIdx > sj) {
+            return;
+        }
+
+        segmentTree[segmentTreeIndex] += diff;
+        if (si != sj) { // non-leaf node
+            int mid = (si + sj) / 2;
+
+            updateUtil(2 * segmentTreeIndex + 1, si, mid, arrIdx, diff);
+            updateUtil(2 * segmentTreeIndex + 2, mid + 1, sj, arrIdx, diff);
+        }
+    }
+
+    public static void update(int arr[], int idx, int newVal) {
+        int n = arr.length;
+        int diff = newVal - arr[idx];
+        arr[idx] = newVal; // updation in array
+
+        updateUtil(0, 0, n - 1, idx, diff); // updation in segment tree O(logN)
+    }
+
     public static void main(String[] args) {
         int arr[] = { 1, 2, 3, 4, 5, 6, 7, 8 };
         int n = arr.length;
@@ -52,6 +74,9 @@ public class implementation {
         System.out.println();
 
         System.out.print("Query ======> ");
+        System.out.println(getSum(arr, 2, 5));
+
+        update(arr, 2, 2);
         System.out.println(getSum(arr, 2, 5));
     }
 }
