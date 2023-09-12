@@ -45,6 +45,33 @@ public class Build_tree {
             preorder(root.right);
         }
 
+    // Python code for Morris preorder traversal with O(N) time and constant space
+    /*
+    def preorderTraversal(self, root: Optional[TreeNode]) -> List[int]:
+        preorder= []
+        curr = root
+
+        while curr:
+            if not curr.left:
+                preorder.append(curr.val)
+                curr = curr.right
+            else:
+                prev = curr.left
+                while prev.right and prev.right != curr:
+                    prev = prev.right
+                
+                if not prev.right:
+                    prev.right = curr
+                    preorder.append(curr.val)
+                    curr = curr.left
+                else:
+                    prev.right = None
+                    curr = curr.right
+
+        return preorder
+    */
+
+
         public void inorder(Node root) {
             if (root == null)
                 return;
@@ -53,6 +80,36 @@ public class Build_tree {
             System.out.print(root.data + " ");
             inorder(root.right); //
         }
+
+    // Python code for Morris inorder traversal with O(N) time and constant space
+    /*
+    def inorderTraversal(self, root: Optional[TreeNode]) -> List[int]:
+        inorder = []
+        curr = root
+
+        while curr:
+            # case -1 - left is NULL
+            if not curr.left:
+                inorder.append(curr.val)
+                curr = curr.right
+            else:
+                rightMost = curr.left
+                # case -2 - if left is not NULL then go to the right most node of left's
+                while rightMost.right and rightMost.right != curr:
+                    rightMost = rightMost.right
+                
+                # if rightMost is NULL then their is traversal remaining for left part so go left
+                if not rightMost.right:
+                    rightMost.right = curr
+                    curr = curr.left
+                # if rightmost points to the curr then break the connection and go right of curr
+                else:
+                    rightMost.right = None
+                    inorder.append(curr.val)
+                    curr = curr.right
+            
+       return inorder
+    */
 
         public void postorder(Node root) {
             if (root == null)
